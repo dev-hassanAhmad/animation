@@ -1,0 +1,450 @@
+#theme-page .theme-page-wrapper .theme-content,
+.mk-grid {
+  max-width:100%;
+  margin:0;
+  padding:0;
+}
+.card-deck-section {
+  padding: 0 0 5vw 0;
+}
+
+
+.deck-cards {
+  display:block;
+  width:100%;
+  height: 40vw;
+  background-size: auto 40vw;
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-color:#F9F9F7;
+  position: relative;
+  padding-top:45vw;
+  overflow: hidden;
+  transition: all 1s ease-out;
+}
+.deck-cards::before {
+  content: " ";
+  position: absolute;
+  width:15vw;
+  height: 12vw;
+  background-image: url('../img/select/top.png')!important;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-position: center center;
+  left:50%;
+  top:8vw;
+  margin-left:12vw;
+  z-index: 99;
+}
+.deck-cards.active::before {
+  opacity:0;
+}
+.deck-cards.active {
+  height: 40vw;
+}
+.selected-card-single.active .selected-card-description {
+  max-height: 30vw;
+  overflow-y: scroll;
+}
+.card-8 {
+    display: block;
+    position: absolute;
+    top: 10vw;
+    left: 50%;
+    width: 14.5vw;
+    height: 20.5vw;
+    transform: translateX(-35%) !important;
+    margin-left: -0.15vw;
+    margin-top: 0.95vw;
+    transition: all 0.25s linear;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 1vw;
+}
+.card-9 {
+    display: block;
+    position: absolute;
+    top: 10vw;
+    left: 50%;
+    width: 14.5vw;
+    height: 20.5vw;
+    transform: translateX(-40%) !important;
+    margin-left: -0.15vw;
+    margin-top: 0.95vw;
+    transition: all 0.25s linear;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 1vw;
+}
+.card-10 {
+    display: block;
+    position: absolute;
+    top: 10vw;
+    left: 50%;
+    width: 14.5vw;
+    height: 20.5vw;
+    transform: translateX(-45%) !important;
+    margin-left: -0.15vw;
+    margin-top: 0.95vw;
+    transition: all 0.25s linear;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 1vw;
+}
+
+.card-11 {
+    display: block;
+    position: absolute;
+    top: 10vw;
+    left: 50%;
+    width: 14.5vw;
+    height: 20.5vw;
+    transform: translateX(-50%) !important;
+    margin-left: -0.15vw;
+    margin-top: 0.95vw;
+    transition: all 0.25s linear;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 1vw;
+}
+.card-12 {
+    display: block;
+    position: absolute;
+    top: 10vw;
+    left: 50%;
+    width: 14.5vw;
+    height: 20.5vw;
+    transform: translateX(-55%) !important;
+    margin-left: -0.15vw;
+    margin-top: 0.95vw;
+    transition: all 0.25s linear;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 1vw;
+}
+.deck-card {
+  display:block;
+  position: absolute;
+  top:10vw;
+  left:50%;
+  width:14.5vw;
+  height: 20.5vw;
+  transform: translateX(-60%);
+  margin-left:-0.15vw;
+  margin-top:0.95vw;
+  transition: all 0.25s linear;
+  overflow: hidden;
+  cursor: pointer;
+  border-radius: 1vw;
+}
+.deck-card .card-wrapper {
+  width:14.5vw;
+  height: 20.5vw;
+  display:block;
+}
+.deck-card .back,
+.deck-card .front {
+  background-size: 100% 100%;
+  width:14.5vw;
+  height: 20.5vw;
+  border-radius:1vw;
+  margin: 0;
+}
+.deck-card.spread-out .card-wrapper .back,
+.deck-card.spread-out .card-wrapper .front {
+  box-shadow:0.4vw 0.1vw 1vw rgba(0,0,0,0.15);
+
+}
+.deck-card.draggable-card.spread-out:hover {
+  transform: translate(-50%,15%) rotate(0deg)!important;
+}
+.deck-card.blank {
+  position: relative;
+  top:auto!important;
+  left:auto!important;
+  margin: 0 2vw!important;
+  box-shadow: none;
+  /* border: 2px dashed #C3B58C; */
+  transform:none!important;
+  overflow: visible!important;
+  border-radius:1vw;
+}
+.popupcard{
+  background: #fff;
+}
+
+
+/* .card-desc{
+  position:fixed;
+    top:0px;
+    left:0px;
+    background:rgba(0,0,0,0.75);
+    width:100%;
+    height:100%;
+    display:none;
+} */
+
+.deck-cards .deck-card.spread-out {
+  box-shadow:0.4vw 0.1vw 1vw rgba(0,0,0,0.15)!important;
+}
+.deck-cards.active .deck-card:hover {
+  transform: translate(-50%,0) rotate(0deg);
+}
+.deck-card.blank.ui-droppable-hover {
+  background-color:rgba(0,0,0,0.2);
+  opacity:0.75;
+}
+.deck-card.blank.card-dropped {
+  border: none;
+}
+.deck-card.blank .deck-card {
+  position: relative;
+  top:auto!important;
+  left:auto!important;
+  margin: 0!important;
+  transform:none!important;
+  overflow: visible!important;
+}
+.card-wrapper img {
+  top:-1px;
+  right:-1px;
+  bottom:-1px;
+  left:-1px;
+  width:calc(100% + 2px);
+  height:calc(100% + 2px);
+}
+.selected-card-single .deck-card.reverse-0 .card-wrapper img {
+
+  transform: rotate(0deg)!important;
+}
+
+.selected-card-single .deck-card.reverse-1 .card-wrapper img  {
+
+  transform: rotate(-180deg)!important;
+
+}
+
+.selected-cards {
+  text-align: center;
+  vertical-align: top;
+  position: relative;
+
+}
+.selected-cards::before {
+  display:block;
+  content: " ";
+  position: absolute;
+  width:10vw;
+  height: 12vw;
+  background-image: url(https://www.colettebaronreid.com/wp-content/themes/jupiter/nightowlassets/goddess/images/drag-me-message.png)!important;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-position: center center;
+  left:8vw;
+  top:4vw;
+  z-index: 99;
+}
+.selected-cards.hide-message::before {
+  display:none;
+}
+.selected-card-single {
+  display:inline-table;
+  width:20%;
+  transition: all 0.3s ease-out;
+  vertical-align: top;
+}
+
+.deck-cards::after {
+  display: none;
+    content: " ";
+    position: absolute;
+    width: 10vw;
+    height: 12vw;
+    background-image: url('../img/select/bottom.png')!important;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-position: center center;
+    left: 10%;
+    top: 8vw;
+    margin-left: 12vw;
+    z-index: 99;
+}
+.selected-card-single.active {
+  width:55%;
+}
+.selected-card-single.active h4 {
+  display:block;
+}
+.selected-card-description {
+  display:block;
+  float:left;
+  width:28vw;
+  display:none;
+  text-align: left;
+}
+.selected-card-description p {
+  font-size:1vw;font-family: 'Montserrat', sans-serif;
+}
+.selected-card-description p strong {
+  font-weight: bold;
+  color:#697278;
+}
+.selected-card-description h2 {
+  font-family: GoudyOldStyleMTStd;
+  color:#883D72;
+  font-size:2vw;
+  font-weight:500;
+
+  text-transform: uppercase;
+}
+.selected-card-description h3 {
+  font-family: "StoneSerif";
+  font-size:1.5vw;
+  color:#C0A186;
+  font-style:italic;
+  padding-left:2vw;
+  margin-left:2vw;
+  border-left:1px solid #C0A186;
+  text-transform: none!important;
+  margin-bottom:2vw;
+}
+.selected-card-single .deck-card.blank {
+  width:14.5vw;
+  display:block;
+  float: left;
+}
+
+.selected-card-single.active .deck-card .card-wrapper,
+.selected-card-single.active .deck-card .back,
+.selected-card-single.active .deck-card .front,
+.selected-card-single.active .deck-card {
+  width:21.22vw!important;
+  height: 30vw!important;
+}
+
+.selected-card-single.active .selected-card-description {
+ display:block;
+}
+
+.deck-card.spread-out.card-1 {
+  margin-left:-36vw;
+  margin-top:3.6vw;
+  transform: translate(-50%,0) rotate(-10deg);
+}
+.deck-card.spread-out.card-2 {
+  margin-left:-32vw;
+  margin-top:3.2vw;
+  transform: translate(-50%,0) rotate(-8deg);
+}
+.deck-card.spread-out.card-3 {
+  margin-left:-28vw;
+  margin-top:2.6vw;
+  transform: translate(-50%,0) rotate(-7deg);
+}
+.deck-card.spread-out.card-4 {
+  margin-left:-24vw;
+  margin-top:2.0vw;
+  transform: translate(-50%,0) rotate(-6deg);
+}
+.deck-card.spread-out.card-5 {
+  margin-left:-20vw;
+  margin-top:1.5vw;
+  transform: translate(-50%,0) rotate(-5deg);
+}
+.deck-card.spread-out.card-6 {
+  margin-left:-16vw;
+  margin-top:1.0vw;
+  transform: translate(-50%,0) rotate(-4deg);
+}
+.deck-card.spread-out.card-7 {
+  margin-left:-12vw;
+  margin-top:0.7vw;
+  transform: translate(-50%,0) rotate(-3deg);
+}
+.deck-card.spread-out.card-8 {
+  margin-left:-8vw;
+  margin-top:0.4vw;
+  transform: translate(-50%,0) rotate(-2deg);
+}
+.deck-card.spread-out.card-9 {
+  margin-left:-4vw;
+  transform: translate(-50%,0) rotate(-1deg);
+  margin-top:0.2vw;
+}
+.deck-card.spread-out.card-10 {
+  margin-left:0vw;
+  transform: translate(-50%,0) rotate(0deg);
+}
+.deck-card.spread-out.card-11 {
+  margin-left:4vw;
+  margin-top:0.2vw;
+  transform: translate(-50%,0) rotate(1deg);
+}
+.deck-card.spread-out.card-12 {
+  margin-left:8vw;
+  margin-top:0.4vw;
+  transform: translate(-50%,0) rotate(2deg);
+}
+.deck-card.spread-out.card-13 {
+  margin-left:12vw;
+  margin-top:0.7vw;
+  transform: translate(-50%,0) rotate(3deg);
+}
+.deck-card.spread-out.card-14 {
+  margin-left:16vw;
+  margin-top:1.0vw;
+  transform: translate(-50%,0) rotate(4deg);
+}
+.deck-card.spread-out.card-15 {
+  margin-left:20vw;
+  margin-top:1.5vw;
+  transform: translate(-50%,0) rotate(5deg);
+}
+.deck-card.spread-out.card-16 {
+  margin-left:24vw;
+  margin-top:2.0vw;
+  transform: translate(-50%,0) rotate(6deg);
+}
+.deck-card.spread-out.card-17 {
+  margin-left:28vw;
+  margin-top:2.6vw;
+  transform: translate(-50%,0) rotate(7deg);
+}
+.deck-card.spread-out.card-18 {
+  margin-left:32vw;
+  margin-top:3.2vw;
+  transform: translate(-50%,0) rotate(8deg);
+}
+.deck-card.spread-out.card-19 {
+  margin-left:36vw;
+  margin-top:3.6vw;
+  transform: translate(-50%,0) rotate(10deg);
+}
+
+.deck-card.ui-draggable-dragging {
+  transform: translate(-50%,0) rotate(0deg)!important;
+}
+
+.deck-card.blank .card-wrapper {
+  cursor: pointer;
+  border-radius:1.1vw;
+  overflow:hidden;
+}
+@media(max-width:768px){
+  .selected-card-single.active .deck-card .card-wrapper,
+  .selected-card-single.active .deck-card .back,
+  .selected-card-single.active .deck-card .front,
+  .selected-card-single.active .deck-card {
+    width:24vw!important;
+    height: 36vw!important;
+  }
+}
+@media(max-width:358px){
+    .selected-card-single.active .deck-card .card-wrapper,
+    .selected-card-single.active .deck-card .back,
+    .selected-card-single.active .deck-card .front,
+    .selected-card-single.active .deck-card {
+      width:24vw!important;
+      height: 36vw!important;
+    }
+  }

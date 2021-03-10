@@ -1,0 +1,691 @@
+<html>
+    <head>
+        <Title>Card Animation</Title>
+        <style>
+            .container{
+                left:45%;
+                right: 50%;
+                top:30%;
+
+                position: absolute;
+            }
+            .card{
+                position: absolute;
+            }
+            .card-2{
+                transform: translate(-3%, -3%);
+
+            }
+            .card-3{
+                transform: translate(-6%, -6%);
+
+            }
+            .card-4{
+                transform: translate(-9%, -9%);
+
+            }
+            .card-5{
+                transform: translate(-12%,-12%);
+
+            }
+            .card-6{
+                transform: translate(-15%, -15%);
+
+            }
+            .card-7{
+                transform: translate(-18%, -18%);
+
+            }
+            .card-2:hover{
+                transform: translate(-3%, -8%);
+
+            }
+            .card-3{
+                transform: translate(-6%, -6%);
+
+            }
+            .card-4{
+                transform: translate(-9%, -9%);
+
+            }
+            .card-5{
+                transform: translate(-12%,-12%);
+
+            }
+            .card-6{
+                transform: translate(-15%, -15%);
+
+            }
+            .card-7{
+                transform: translate(-18%, -18%);
+
+            }
+
+            .spread.card-1{
+                transform: rotate(15deg) translateY(-10%) translateX(140%);
+                transition: 0.5s;
+            }
+
+            .spread.card-2{
+                transform: rotate(10deg) translateY(-7%) translateX(100%);
+                
+                transition: 0.5s;
+            }
+            .spread.card-3{
+                transform: rotate(10deg) translateY(-15%) translateX(50%);
+
+                transition: 0.5s;
+            }
+            .spread.card-4{
+                transform: rotate(0deg) translateY(-15%) translateX(10%);
+                transition: 0.5s;
+            }
+            .spread.card-5{
+                transform: rotate(0deg) translateY(-10%) translateX(-50%);
+                transition: 0.5s;
+            }
+            .spread.card-6{
+                transform: rotate(-7deg) translateY(-10%) translateX(-70%);
+                transition: 0.5s;
+            }
+
+            .spread.card-7{
+                transform: rotate(-15deg) translateY(-5%) translateX(-100%);
+                transition: 0.5s;
+            }
+/* RESET */
+            .reverse.card-1{
+                transform: rotate(0deg) translateY(0) translateX(0);
+                transition: 0.5s;
+            }
+
+            .reverse.card-2{
+                transform: rotate(0deg) translateY(-3%) translateX(-3%);
+                
+                transition: 0.5s;
+            }
+            .reverse.card-3{
+                transform: rotate(0deg) translateY(-6%) translateX(-6%);
+
+                transition: 0.5s;
+            }
+            .reverse.card-4{
+                transform: rotate(0deg) translateY(-9%) translateX(-9%);
+                transition: 0.5s;
+            }
+            .reverse.card-5{
+                transform: rotate(0deg) translateY(-12%) translateX(-12%);
+                transition: 0.5s;
+            }
+            .reverse.card-6{
+                transform: rotate(0deg) translateY(-15%) translateX(-15%);
+                transition: 0.5s;
+            }
+
+            .reverse.card-7{
+                transform: rotate(0deg) translateY(-18%) translateX(-18%);
+                transition: 0.5s;
+            }
+
+
+
+            .styleNone{
+                display: none;
+            }
+            .back{
+                display: none;
+            }
+            .button{
+                position: absolute;
+                top:100px
+            }
+.selected-card{
+    position: relative;
+    top: 90%;
+    left: 25%;
+}
+.shuffleButton {
+position: absolute;
+left: 10%;
+  background-color: #4CAF50; 
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 10px;
+
+  font-size: 16px;
+}
+.reset {
+position: absolute;
+  background-color: red; 
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 10px;
+
+  font-size: 16px;
+}
+
+.cards{
+    
+    left: 30%;
+    top: 150%;
+
+}
+.backImg{
+    width: 400px;
+}
+/* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+.shuffle{
+
+    animation:  first 2s ease-in-out forwards;
+
+}
+.shuffle2{
+   
+    animation:  second 3s ease-in-out forwards;
+
+}
+.shuffle3{
+  
+    animation:  third 4s ease-in-out forwards;
+
+}
+
+@keyframes first {
+
+  50% {
+    transform: rotate(0deg) translateY(-25%) translateX(-120%);
+    z-index: 0;}
+
+
+
+  100% {
+    transform: rotate(0deg) translateY(-18%) translateX(-18%);
+    z-index: 1;
+
+  }
+}
+
+@keyframes second {
+
+    50% {
+    transform: rotate(0deg) translateY(-25%) translateX(-120%);
+    z-index: 0;}
+/* 
+  }
+
+  50% {
+    transform: rotate(0deg) translateY(-22%) translateX(-80%);
+    z-index: 1;
+  } */
+
+
+
+  100% {
+    transform: rotate(0deg) translateY(-18%) translateX(-18%);
+    z-index: 1;
+
+  }
+}
+
+@keyframes third {
+    50% {
+    transform: rotate(0deg) translateY(-25%) translateX(-600%);
+    z-index: 0;}
+
+    50% {
+    transform: rotate(0deg) translateY(-25%) translateX(-120%);
+    z-index: 0;}
+
+
+  100% {
+    transform: rotate(0deg) translateY(-18%) translateX(-18%);
+    z-index: 2;
+
+  }
+}
+div.card{
+    width: 100px;
+}
+
+.selected-card-description {
+  position: absolute;
+  top: -7%;
+  left: 40%;
+  width: 300px;
+  height: 300px;
+
+}
+.selected-card{
+    width: 1000px;
+}
+
+/* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+        </style>
+    </head>
+    <body>
+        <!-- <div class="Card_section">
+            <div class="deck-card card-14" id="Card14" name="">
+                <div class="card-wrapper">
+                    <div class="front" style="background-image:url()">
+                        <img src="assets/img/Venus-Front.png" width="70px" height="120px" >
+                    </div>
+                    <div class="back" style="background-image:url()" id="formButton">
+                        <img src="assets/img/Venus-Back.png" width="70px" height="120px" >
+                    </div>
+                </div>
+                <div class="card-desc" style="display:none;">
+                    <h2>Venus:</h2>
+                    <h3>Community:</h3>
+                    <p>The first key element in achieving a healthy, sustainable state of balance is Community.
+                        You might be the sole person running your business, but life (and work) are not meant to
+                        be done in isolation. Just as Venus, planet of love, beauty, and connection, is a symbol of
+                        the importance of finding your tribe, every mentor you admire is a symbol of the great
+                        work that happens when you find the right support and accountability. No success hasever
+                        happened in a vacuum. So whether it’s the soulful or strategic components of your
+                        life and work that need tending, don’t be afraid to actively seek mentorship and
+                        accountability. The right people around you truly make all the difference and give you the
+                        momentum you need to achieve that perfect balance recipe. So, who in your life (or that
+                        you’ve encountered in books or online) makes you feel seen, heard, encouraged? Who
+                        gives you positive energy or keeps you accountable to your goals? How can you
+                        intentionally seek out and surround yourself with more of this type of support?</p>
+                </div>
+            </div>
+        </div> -->
+        <div class="container">
+            <div class=" deck-cards" id="deck-cards">
+                <div class="card card-1 One" onClick="selected(this)">
+                    <div class="front">
+                        <img src="assets/img/Jupiter-Front.png" width="225px" height="320px" >
+                    </div>
+                    <div class="back">
+                        <img src="assets/img/Jupiter-Back.png" width="225px" height="320px" >
+                    </div>
+                    <div class="card-desc" style="display:none;">
+                        <h2>Jupiter:</h2>
+                        <h3>Leverage:</h3>
+                        <p>The third key element in striking the perfect recipe for personal balance is Leverage. Justlike
+                            the planet Jupiter, which is known for expansion, growth, luck, and consequential
+                            productivity, it’s essential to leverage the tools and productivity hacks to work smarter and
+                            get time back. So, I invite you to ponder, where are you spending time needlessly? Are
+                            there tasks that seem to drag on that could be delegated? Or is there perhaps a resource
+                            or tool you could explore to simplify a particularly draining task?</p>
+                    </div>
+                </div>
+                <div class="card card-2  two" onClick="selected(this)">
+                    <div class="front">
+                        <img src="assets/img/Mars-Front.png" width="225px" height="320px" >
+                    </div>
+                    <div class="back">
+                        <img src="assets/img/Mars-Back.png" width="225px" height="320px" >
+                    </div>
+                    <div class="card-desc" style="display:none;">
+                        <h2>Mars:</h2>
+                        <h3>Engage in YOU:</h3>
+                        <p>The seventh key element in finding and maintaining your optimum balance is Engagement
+                            in YOU. Just as Mars is the ruling planet of decisive action, it is time for you to take a fiery
+                            step in self-acceptance and love. It’s time to start putting yourself first...guilt free. Let me
+                            say that again, it’s time to put YOU first. NO guilt. So, ask yourself. Where are you putting
+                            others first? What would truly putting you — your needs, your dreams, your wants — first
+                            look like? What boundaries need to be placed to do so? How can you remind yourself to
+                            do this when you forget?</p>
+                    </div>
+                </div>
+                <div class="card card-3 three" onClick="selected(this)">
+                    <div class="front">
+                        <img src="assets/img/Mercury-Front.png" width="225px" height="320px" >
+                    </div>
+                    <div class="back">
+                        <img src="assets/img/Mercury-Back.png" width="225px" height="320px" >
+                    </div>
+                    <div class="card-desc" style="display:none;">
+                        <h2>Mercury</h2>
+                        <h3>Narrate: </h3>
+                        <p>The fifth key element of true, authentic balance is Narration. In addition to rooting out old
+                            ways of thinking and forming new habits (as the Moon + fourth key element instruct us), it’s
+                            essential that we develop and believe in a narrative we can get behind. This can mean
+                            shifting the mission statement of our business, the way we market it, or even the narrative
+                            we tell to ourselves about ourselves and our ability to show-up (both soulfully and
+                            strategically). So, just as Mercury rules over communication, we must be the rulers of our
+                            own stories and tell them to ourselves in others in a way that uplifts, inspires, and
+                            encourages. So, what stories are you currently telling yourself about yourself? How do they
+                            make you feel? And what story is your business currently telling to others? Is it an accurate
+                            one?</p>
+                    </div>
+                </div>
+                <div class="card card-4 four " onClick="selected(this)">
+                    <div class="front">
+                        <img src="assets/img/Moon-Front.png" width="225px" height="320px" >
+                    </div>
+                    <div class="back">
+                        <img src="assets/img/Moon-Back.png" width="225px" height="320px" >
+                    </div>
+                    <div class="card-desc" style="display:none;">
+                        <h2>Moon</h2>
+                        <h3>Align: </h3>
+                        <p>The fourth key element in establishing the most rewarding state of personal balance is
+                            Alignment. Just in the way the Moon is said to rule over your intuition, emotions, and
+                            interior landscape, our thoughts, emotions, and beliefs dictate the habits, routines, and
+                            patterns we form. So, if your emotional relationships with any aspects of your life and
+                            business, from money mindset (and the conversations or monetizations associated with it)
+                            to your own personal missions, are mis-aligned, the manifestations of those things will be,
+                            too. This is where it becomes essential to adhere to a mindset that helps you build
+                            positive, self-improving and affirming habits. What areas of your work or life currently feel
+                            misaligned with your dream vision? What habits have you formed that feel a bit self-
+                            sabotaging? What do you think would improve them?</p>
+                    </div>
+                </div>
+                <div class="card card-5 five " onClick="selected(this)">
+                    <div class="front">
+                        <img src="assets/img/Saturn-Front.png" width="225px" height="320px" >
+                    </div>
+                    <div class="back">
+                        <img src="assets/img/Saturn-Back.png" width="225px" height="320px" >
+                    </div>
+                    
+                <div class="card-desc" style="display:none;">
+                    <h2>Saturn:</h2>
+                    <h3>Boundaries:</h3>
+                    <p>The first key element in achieving a healthy, sustainable state of balance is Boundaries. The
+                        art of saying no helps prevent things like over-commitment, over-extending, and the
+                        consequential overwhelm. Having a strong mindset and approach to your time, like Saturn
+                        (known as the ‘teacher’ planet that imposes strict lessons and strength to carry them
+                        through), can help in both your soulful and strategic endeavours. Journal questions to
+                        explore this further is: Where have I set healthy boundaries? Where do I feel over-
+                        extended? How can I set and enforce boundaries in those areas? What does it feel like
+                        when a boundary is crossed?</p>
+                </div>
+                </div>
+                <div class="card card-6 six " onClick="selected(this)">
+                    <div class="front">
+                        <img src="assets/img/Sun-Front.png" width="225px" height="320px" >
+                    </div>
+                    <div class="back">
+                        <img src="assets/img/Sun-Back.png" width="225px" height="320px" >
+                    </div>
+                    <div class="card-desc" style="display:none;">
+                        <h2>Sun</h2>
+                        <h3>Assess:</h3>
+                        <p>The second key element in finding and maintaining your optimum balance is Assessment.
+                            Regular reflection and setting clear mission goals and steps for yourself is at the heart of
+                            turning a dream into a reality. So, just the way the sun shines a light on your day, I invite
+                            you to illuminate your true goal by asking yourself, what does a true state of balance look
+                            like for you? What might it take to get there? How can you break that down further into
+                            actionable steps? And how can you reward yourself for your progress along the way?</p>
+                    </div>
+                </div>
+                <div class="card card-7 seven" onClick="selected(this)">
+                    <div class="front">
+                        <img src="assets/img/Venus-Front.png" width="225px" height="320px" >
+                    </div>
+                    <div class="back">
+                        <img src="assets/img/Venus-Back.png" width="225px" height="320px" >
+                    </div>
+                    <div class="card-desc" style="display:none;">
+                        <h2>Venus:</h2>
+                        <h3>Community:</h3>
+                        <p>The first key element in achieving a healthy, sustainable state of balance is Community.
+                            You might be the sole person running your business, but life (and work) are not meant to
+                            be done in isolation. Just as Venus, planet of love, beauty, and connection, is a symbol of
+                            the importance of finding your tribe, every mentor you admire is a symbol of the great
+                            work that happens when you find the right support and accountability. No success hasever
+                            happened in a vacuum. So whether it’s the soulful or strategic components of your
+                            life and work that need tending, don’t be afraid to actively seek mentorship and
+                            accountability. The right people around you truly make all the difference and give you the
+                            momentum you need to achieve that perfect balance recipe. So, who in your life (or that
+                            you’ve encountered in books or online) makes you feel seen, heard, encouraged? Who
+                            gives you positive energy or keeps you accountable to your goals? How can you
+                            intentionally seek out and surround yourself with more of this type of support?</p>
+                    </div>
+                </div>
+
+                
+            </div>
+        
+        </div>
+        <button class="reset"onclick="reset()">Reset</button>
+        <button class="shuffleButton" onclick="shuffle()">Shuffle</button>
+
+        <div class="selected-card">
+            <div class="selected-card-single">
+                <h4>Your Card for the Day</h4>
+                <div class="deck-card blank ui-droppable" id="Select1">
+                    <div class="cards"></div>
+
+                </div>
+                <div class="selected-card-description">
+
+                </div>
+            </div>
+        </div>
+
+
+        <script type="text/javascript">
+        var One={
+            "name":"Jupitor",
+            "header":"Leverage",
+            "description":"The third key element in striking the perfect recipe for personal balance is Leverage. Justlike the planet Jupiter, which is known for expansion, growth, luck, and consequentialproductivity, it’s essential to leverage the tools and productivity hacks to work smarter and get time back. So, I invite you to ponder, where are you spending time needlessly? Arethere tasks that seem to drag on that could be delegated? Or is there perhaps a resource or tool you could explore to simplify a particularly draining task?"
+        }
+        var Two={
+            "name":"Mars",
+            "header":"Engage in YOU:",
+            "description":"The seventh key element in finding and maintaining your optimum balance is Engagement in YOU. Just as Mars is the ruling planet of decisive action, it is time for you to take a fiery step in self-acceptance and love. It’s time to start putting yourself first...guilt free. Let me say that again, it’s time to put YOU first. NO guilt. So, ask yourself. Where are you putting others first? What would truly putting you — your needs, your dreams, your wants — first look like? What boundaries need to be placed to do so? How can you remind yourself to do this when you forget?"
+        }
+        var Three={
+            "name":"venus",
+            "header":"community",
+            "description":" The first key element in achieving a healthy sustainable state of balance is Community You might be the sole person running your business, but life (and work) are not meant to be done in isolation. Just as Venus, planet of love, beauty, and connection, is a symbol of the importance of finding your tribe, every mentor you admire is a symbol of the great work that happens when you find the right support and accountability. No success hasever happened in a vacuum. So whether it’s the soulful or strategic components of your life and work that need tending, don’t be afraid to actively seek mentorship and accountability. The right people around you truly make all the difference and give you the momentum you need to achieve that perfect balance recipe. So, who in your life (or that you’ve encountered in books or online) makes you feel seen, heard, encouraged? Who gives you positive energy or keeps you accountable to your goals? How can you intentionally seek out and surround yourself with more of this type of support?"
+        }
+        var Four={
+            "name":"venus",
+            "header":"community",
+            "description":" The first key element in achieving a healthy sustainable state of balance is Community You might be the sole person running your business, but life (and work) are not meant to be done in isolation. Just as Venus, planet of love, beauty, and connection, is a symbol of the importance of finding your tribe, every mentor you admire is a symbol of the great work that happens when you find the right support and accountability. No success hasever happened in a vacuum. So whether it’s the soulful or strategic components of your life and work that need tending, don’t be afraid to actively seek mentorship and accountability. The right people around you truly make all the difference and give you the momentum you need to achieve that perfect balance recipe. So, who in your life (or that you’ve encountered in books or online) makes you feel seen, heard, encouraged? Who gives you positive energy or keeps you accountable to your goals? How can you intentionally seek out and surround yourself with more of this type of support?"
+        }
+        var Five={
+            "name":"venus",
+            "header":"community",
+            "description":" The first key element in achieving a healthy sustainable state of balance is Community You might be the sole person running your business, but life (and work) are not meant to be done in isolation. Just as Venus, planet of love, beauty, and connection, is a symbol of the importance of finding your tribe, every mentor you admire is a symbol of the great work that happens when you find the right support and accountability. No success hasever happened in a vacuum. So whether it’s the soulful or strategic components of your life and work that need tending, don’t be afraid to actively seek mentorship and accountability. The right people around you truly make all the difference and give you the momentum you need to achieve that perfect balance recipe. So, who in your life (or that you’ve encountered in books or online) makes you feel seen, heard, encouraged? Who gives you positive energy or keeps you accountable to your goals? How can you intentionally seek out and surround yourself with more of this type of support?"
+        }
+        var Six={
+            "name":"venus",
+            "header":"community",
+            "description":" The first key element in achieving a healthy sustainable state of balance is Community You might be the sole person running your business, but life (and work) are not meant to be done in isolation. Just as Venus, planet of love, beauty, and connection, is a symbol of the importance of finding your tribe, every mentor you admire is a symbol of the great work that happens when you find the right support and accountability. No success hasever happened in a vacuum. So whether it’s the soulful or strategic components of your life and work that need tending, don’t be afraid to actively seek mentorship and accountability. The right people around you truly make all the difference and give you the momentum you need to achieve that perfect balance recipe. So, who in your life (or that you’ve encountered in books or online) makes you feel seen, heard, encouraged? Who gives you positive energy or keeps you accountable to your goals? How can you intentionally seek out and surround yourself with more of this type of support?"
+        }
+        var Seven={
+            "name":"venus",
+            "header":"community",
+            "description":" The first key element in achieving a healthy sustainable state of balance is Community You might be the sole person running your business, but life (and work) are not meant to be done in isolation. Just as Venus, planet of love, beauty, and connection, is a symbol of the importance of finding your tribe, every mentor you admire is a symbol of the great work that happens when you find the right support and accountability. No success hasever happened in a vacuum. So whether it’s the soulful or strategic components of your life and work that need tending, don’t be afraid to actively seek mentorship and accountability. The right people around you truly make all the difference and give you the momentum you need to achieve that perfect balance recipe. So, who in your life (or that you’ve encountered in books or online) makes you feel seen, heard, encouraged? Who gives you positive energy or keeps you accountable to your goals? How can you intentionally seek out and surround yourself with more of this type of support?"
+        }
+
+
+        function shuffle() {
+            const cardList=[".card-1",".card-2",".card-3",".card-4",".card-5",".card-6",]
+
+            var shuffleArray=[]
+            shuffleArray.length=0;
+            while(shuffleArray.length < 3){
+                // shuffleArray[i]=Math.floor(Math.random() * 6);
+
+                var n = Math.floor(Math.random() * 6);
+                if(shuffleArray.indexOf(n) === -1) shuffleArray.push(n);
+                
+            }
+            
+            console.log(shuffleArray)
+            document.querySelector(cardList[shuffleArray[0]]).classList.add("shuffle")
+
+            document.querySelector(cardList[shuffleArray[1]]).classList.add("shuffle2")
+
+            document.querySelector(cardList[shuffleArray[2]]).classList.add("shuffle3")
+
+
+
+            
+
+        }
+
+        document.querySelector(".deck-cards").addEventListener("click", spread);
+
+        function spread() {
+        var card_One = document.querySelector('.card-1');
+        var card_Two = document.querySelector('.card-2');
+        var card_Three = document.querySelector('.card-3');
+        var card_Four = document.querySelector('.card-4');
+        var card_Five = document.querySelector('.card-5');
+        var card_Six = document.querySelector('.card-6');
+        var card_Seven= document.querySelector('.card-7');
+
+
+        card_One.classList.add("spread");
+        card_Two.classList.add("spread")
+        card_Three.classList.add("spread")
+        card_Four.classList.add("spread")
+        card_Five.classList.add("spread")
+        card_Six.classList.add("spread")
+        card_Seven.classList.add("spread")
+
+        if(card_One.classList[3]=="reverse"){
+        card_One.classList.remove("reverse");
+        card_Two.classList.remove("reverse")
+        card_Three.classList.remove("reverse")
+        card_Four.classList.remove("reverse")
+        card_Five.classList.remove("reverse")
+        card_Six.classList.remove("reverse")
+        card_Seven.classList.remove("reverse")
+        
+        }
+
+        }
+
+
+
+
+
+
+        function selected(info){
+        card_info="."+info.classList[1]
+        console.log(info.childNodes[5].childNodes[1].textContent)
+        
+        const blank=document.querySelector(".deck-card")
+        const cards=document.querySelector(".cards")
+
+        cards.remove()
+        
+        
+        const divFront=document.createElement("div")
+        divFront.classList.add("front")
+        const frontImg=document.createElement("img")
+        frontImg.src=document.querySelector(card_info).childNodes[3].childNodes[1].src;
+        frontImg.width="300";
+        frontImg.height="450";
+        divFront.appendChild(frontImg)
+
+        const divBack=document.createElement("div")
+        divBack.classList.add("backImg")
+        const backImg=document.createElement("img")
+        backImg.src="assets/img/Mercury-Front.png";
+        backImg.width="300px"
+        backImg.height="450px"
+        divBack.appendChild(backImg)
+
+        const div=document.createElement("div")
+        div.classList.add("cards")
+        div.appendChild(divFront)
+        div.appendChild(divBack)
+        blank.appendChild(div)
+
+
+            
+        var h2=document.createElement("h2")
+        var name = document.createTextNode(info.childNodes[5].childNodes[1].textContent)
+        h2.appendChild(name)
+        var h3=document.createElement("h3")
+        var header = document.createTextNode(info.childNodes[5].childNodes[3].textContent)
+        h3.appendChild(header)
+        var p=document.createElement("p")
+        var description=document.createTextNode(info.childNodes[5].childNodes[5].textContent)
+        p.appendChild(description)
+        var selected_description=document.querySelector(".selected-card-description")
+        selected_description.remove()
+        const selectedDescription=document.createElement("div")
+        selectedDescription.classList.add("selected-card-description")
+
+        selectedDescription.appendChild(h2)
+        selectedDescription.appendChild(h3)
+        selectedDescription.appendChild(p)
+        const divDesc=document.querySelector(".selected-card-single")
+        divDesc.appendChild(selectedDescription)
+
+
+ 
+        
+
+
+        
+
+        
+
+
+
+        
+       
+
+
+
+        }
+
+
+
+
+
+
+
+
+
+        function reset() {
+        var card_One = document.querySelector('.card-1');
+        var card_Two = document.querySelector('.card-2');
+        var card_Three = document.querySelector('.card-3');
+        var card_Four = document.querySelector('.card-4');
+        var card_Five = document.querySelector('.card-5');
+        var card_Six = document.querySelector('.card-6');
+        var card_Seven= document.querySelector('.card-7');
+        card_One.classList.add("reverse");
+        card_Two.classList.add("reverse")
+        card_Three.classList.add("reverse")
+        card_Four.classList.add("reverse")
+        card_Five.classList.add("reverse")
+        card_Six.classList.add("reverse")
+        card_Seven.classList.add("reverse")
+
+        card_One.classList.remove("spread");
+        card_Two.classList.remove("spread")
+        card_Three.classList.remove("spread")
+        card_Four.classList.remove("spread")
+        card_Five.classList.remove("spread")
+        card_Six.classList.remove("spread")
+        card_Seven.classList.remove("spread")
+        
+//.....................................................
+
+        if (document.querySelector(".shuffle")){
+            document.querySelector(".shuffle").classList.remove("shuffle")
+            document.querySelector(".shuffle2").classList.remove("shuffle2")
+            document.querySelector(".shuffle3").classList.remove("shuffle3")
+
+        }
+
+        }
+
+        
+        </script>
+
+
+        
+    </body>
+</html>
